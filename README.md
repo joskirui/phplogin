@@ -1,20 +1,25 @@
-#PHP, MySQLi, Bootstrap 4.3.1 & Jquery 3.4.1
-###Additional options
-    1.jQuery validation plug-in 1.5.5
-    2.Font awesome Version 5.9.0
-    3.popper js version 1.14.7
-
-Original script [https://github.com/olddocks/phploginscript](https://github.com/olddocks/phploginscript)
-
-###Below is my updates
--replaced table layout with bootstrap grid layout 
--replaced ereg with preg 
--replaced mysql with mysqli
--upgraded jquery from 1.3.2 to Jquery 3.4.1
--added countries https://gist.github.com/adhipg/1600028
--and flags https://github.com/yusufshakeel/mysql-country-with-flag
--added stacked table on admin page users list https://github.com/joskirui/no-more-table
--hopefully do more updates in the future Credits to the original owner 
+<h2>PHP, MySQLi, Bootstrap 4.3.1 & Jquery 3.4.1</h2>
+Additional options
+<ul>
+<li>jQuery validation plug-in 1.5.5</li>
+<li> Font awesome Version 5.9.0 </li>
+<li>popper js version 1.14.7</li>
+</ul>
+<p>
+Original script https://github.com/olddocks/phploginscript
+</p>
+<pre>
+Below is my updates
+--replaced table layout with bootstrap grid layout 
+--replaced ereg with preg 
+--replaced mysql with mysqli
+--upgraded jquery from 1.3.2 to Jquery 3.4.1
+--added countries https://gist.github.com/adhipg/1600028
+--and flags https://github.com/yusufshakeel/mysql-country-with-flag
+--added stacked table on admin page users list https://github.com/joskirui/no-more-table
+** hopefully do more updates in the future Credits to the original owner 
+</pre>
+ 
 
 #Installation
 
