@@ -7,7 +7,7 @@ header("Location: login.php");
 exit();
 }
 
-$page_limit = 4; 
+$page_limit = 3; 
 
 
 $host  = $_SERVER['HTTP_HOST'];
@@ -191,16 +191,16 @@ if (isset($_SESSION['user_id'])) {?>
           
           <form name="form1" method="get" action="admin.php" class="form-inline">
              
-                <input name="q" type="text" id="q" class="form-control mb-2 mr-sm-2" placeholder="Type email or user name">            
+                <input name="q" type="text" id="q" class="form-control mb-2 mr-sm-2" placeholder="Type email or user name" value="<?php echo @$_GET['q']; ?>">            
               <select name="qoption" class="form-control mb-2 mr-sm-2">
               <option value="">Select status</option>
-                <option value="pending">Pending users </option>
-                <option value="recent">Recently registered  </option>
-                <option value="banned">Banned users  </option>
+                <option value="pending"  <?php if (@$get['qoption'] == 'pending') echo 'selected="selected"'?>>Pending users </option>
+                <option value="recent"  <?php if (@$get['qoption'] == 'recent') echo 'selected="selected"'?>>Recently registered  </option>
+                <option value="banned"  <?php if (@$get['qoption'] == 'banned') echo 'selected="selected"'?>>Banned users  </option>
                 </select>           
               
                 <input name="doSearch" type="submit" id="doSearch2" value="Search"  class="btn btn-primary mb-2">
-             
+             <a href="admin.php" class="btn btn-secondary ml-2 mb-2">Reset</a>
               </form>
                <span class="example">[You can leave search blank to if you use above options]</span>
  
@@ -249,20 +249,21 @@ if (isset($_SESSION['user_id'])) {?>
 	  // outputting the pages
 		if ($total > $page_limit)
 		{
-		echo "<div><strong>Pages:</strong> ";
-		$i = 0;
+		echo '<nav><ul class="pagination">';
+    $i = 0;
+   
 		while ($i < ceil($total/$page_limit))
 		{	
-		$page_no = $i+1;
+    $page_no = $i+1;
 		$qstr = preg_replace("&page=[0-9]+&","",$_SERVER['QUERY_STRING']);
-		echo "<a href=\"admin.php?$qstr&page=$page_no\">$page_no</a> ";
+    echo "<li class='page-item'><a class='page-link' href=\"admin.php?$qstr&page=$page_no\">$page_no</a> </li>";
 		$i++;
-		}
-		echo "</div>";
+    }
+		echo '</ul></nav>';
 		}  ?>
 		</p>
 		<form name "searchform" action="admin.php" method="post">
-    <div class="table-responsive">
+    <div class="table-responsive" id="no-more-table">
         <table class="table table-striped table-light">
         <thead class="thead-dark">
           <tr>  

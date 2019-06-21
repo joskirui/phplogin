@@ -266,7 +266,7 @@ setcookie("user_id", '', time()-60*60*24*COOKIE_TIME_OUT, "/");
 setcookie("user_name", '', time()-60*60*24*COOKIE_TIME_OUT, "/");
 setcookie("user_key", '', time()-60*60*24*COOKIE_TIME_OUT, "/");
 
-header("Location: login.php");
+header("Location: index.php");
 }
 
 // Password and salt generation
